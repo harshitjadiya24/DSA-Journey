@@ -1,4 +1,4 @@
-// find the index of largest and smallest element
+// reverse the array
 
 #include <iostream>
 using namespace std;
@@ -6,25 +6,31 @@ using namespace std;
 int main()
 {
   int sizeOfArray;
-  int target = 50;
-  int index1;
+  cout << "Write the size: ";
   cin >> sizeOfArray;
+
   int arr[sizeOfArray];
 
   for (int i = 0; i < sizeOfArray; i++)
   {
     cin >> arr[i];
   }
+
+  int start = 0;
+  int end = sizeOfArray - 1;
+
+  while (start < end)
+  {
+    swap(arr[start], arr[end]);
+
+    start++;
+    end--;
+  }
+
   for (int i = 0; i < sizeOfArray; i++)
   {
-    if (arr[i] == target)
-    {
-      index1 = i;
-    }
-    else
-    {
-      index1 = -1;
-    }
+    cout << arr[i] << " ";
   }
-  cout << "Target number index is " << index1 << endl;
+
+  return 0;
 }
