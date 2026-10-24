@@ -6,18 +6,11 @@ public:
 
         for(int i = 0; i < nums.size(); i++)
         {
-            vector<int> temp;
+            string s = to_string(nums[i]);
 
-            while(nums[i] > 0)
+            for(int j = 0; j < s.size(); j++)
             {
-                int r = nums[i] % 10;
-                nums[i] /= 10;
-                temp.push_back(r);
-            }
-
-            for(int j = temp.size() - 1; j >= 0; j--)
-            {
-                ans.push_back(temp[j]);
+                ans.push_back(s[j] - '0');
             }
         }
 
